@@ -5,11 +5,11 @@
   "main": "app.js",
   "start": "BROWSER='google chrome' react-scripts start",
   "scripts": {
-    "build:dev": "webpack --config dev.config.js",
+    "build:dev": "webpack",
     "build:prod": "webpack --config prod.config.js",
     "dev-server": "webpack serve",
     "test": "jest --config=jest.config.json",
-    "clean": "rm public/*.js*"
+    "clean": "rimraf public/bundle.js* public/styles.css*"
   },
   "keywords": [
     "react",
@@ -47,5 +47,8 @@
     "uuid": "^3.4.0",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "devDependencies": {
+    "rimraf": "^2.7.1"
   }
 }
