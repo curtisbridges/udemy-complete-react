@@ -2,12 +2,14 @@
   "name": "expensify",
   "version": "1.0.0",
   "description": "Udemy React course by Andrew Mead",
-  "main": "index.js",
+  "main": "app.js",
   "start": "BROWSER='google chrome' react-scripts start",
   "scripts": {
-    "build": "webpack",
+    "build:dev": "webpack --config dev.config.js",
+    "build:prod": "webpack --config prod.config.js",
     "dev-server": "webpack serve",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "clean": "rm public/*.js*"
   },
   "keywords": [
     "react",
