@@ -10,14 +10,12 @@ import 'firebase/database'
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyCwk13WFKliIGWvKw0fMdNnS5vmdrItWR4',
-  authDomain: 'expensify-cmb.firebaseapp.com',
-  databaseURL: 'https://expensify-cmb-default-rtdb.firebaseio.com',
-  projectId: 'expensify-cmb',
-  storageBucket: 'expensify-cmb.appspot.com',
-  messagingSenderId: '863153455799',
-  appId: '1:863153455799:web:b0ad93cfe44d3969f68332',
-  measurementId: 'G-E8JNT34534',
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_DATABASE_URL,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
 }
 
 // Initialize Firebase
