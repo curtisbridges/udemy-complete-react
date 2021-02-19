@@ -5,7 +5,7 @@ import selectExpenses from '../selectors/expenses'
 import totalExpenses from '../selectors/expenses-total'
 
 export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
-  const expenseWord = expenseCount === 1 ? 'expense' : 'expenses'
+  const expenseWord = expenseCount === 1 ? ' expense ' : ' expenses '
   const formattedExpenseTotal = numeral(expensesTotal / 100).format('$0,0.00')
 
   return (
@@ -21,8 +21,6 @@ export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
 
 const mapStateToProps = (state) => {
   const visibleExpenses = selectExpenses(state.expenses, state.filters)
-
-  console.log(`visibleExpenses = ${visibleExpenses}`)
 
   return {
     expenseCount: visibleExpenses.length,
