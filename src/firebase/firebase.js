@@ -6,9 +6,9 @@ import firebase from 'firebase/app'
 // If you enabled Analytics in your project, add the Firebase SDK for Analytics
 // import 'firebase/analytics'
 import 'firebase/database'
+import 'firebase/auth'
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
@@ -20,9 +20,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
-const database = firebase.database()
 
-export { firebase, database as default }
+const database = firebase.database()
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
+
+export { firebase, googleAuthProvider, database as default }
 
 // const logExpenses = (snapshot) => {
 //   const expenses = []
